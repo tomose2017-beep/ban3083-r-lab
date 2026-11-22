@@ -1,6 +1,6 @@
 ---
 title: "Week 1: From SQL to R with the Chinook Database"
-author: "Student Name: [Type Your Name Here]"
+author: "Student Name: [Tomo Ogundimbola]"
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -164,7 +164,7 @@ r_pipeline <- tracks_db |>
   inner_join(genres_db, by = "GenreId") |>
   group_by(Genre = Name.y) |>
   summarize(
-    TrackCount = count(),
+    TrackCount = n(),
     AvgMinutes = mean(Milliseconds, na.rm = TRUE) / 60000.0
   ) |>
   filter(TrackCount >= 30) |>
